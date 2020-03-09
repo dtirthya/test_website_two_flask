@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THANK YOU FOR REGISTERING.</title>
+</head>
+<body>
+    {%block content%}
+        {% if session["m_or_f"] == "mood_one" %}
+            <h1>THANKS FOR SIGNING UP, MR. {{ session["name"] | upper }}.</h1>
+        {% elif session["m_or_f"] == "mood_two" %}
+            <h1>THANKS FOR SIGNING UP, MS. {{ session["name"] | upper }}.</h1>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
